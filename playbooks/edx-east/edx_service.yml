@@ -201,7 +201,7 @@
       with_items: metric_alarms 
       when: auto_scaling_service
 
-    - name: See if we already have a splunk instance
+    - name: See if instances already exist
       local_action:
         module: "ec2_lookup"
         region: "{{ aws_region }}"
