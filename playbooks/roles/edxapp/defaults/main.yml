@@ -315,6 +315,7 @@ EDXAPP_CODE_JAIL_LIMITS:
   REALTIME: 3
   # Needs to be non-zero so that jailed code can use it as their temp directory.(1MiB in bytes)
   FSIZE: 1048576
+  CPU: 1
 
 EDXAPP_VIRTUAL_UNIVERSITIES: []
 EDXAPP_SUBDOMAIN_BRANDING: {}
@@ -364,6 +365,9 @@ EDXAPP_CELERY_WORKERS:
 
 EDXAPP_DEFAULT_CACHE_VERSION: "1"
 EDXAPP_OAUTH_ENFORCE_SECURE: True
+
+# Directory for edxapp application configuration files
+EDXAPP_CFG_DIR: "{{ COMMON_CFG_DIR }}/edxapp"
 
 #-------- Everything below this line is internal to the role ------------
 
