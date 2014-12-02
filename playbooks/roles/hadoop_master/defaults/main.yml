@@ -20,6 +20,7 @@ hadoop_master_role_name: hadoop_master
 # OS packages
 #
 
-hadoop_master_debian_pkgs: []
+hadoop_master_debian_pkgs:
+  - openjdk-7-jdk
 
 hadoop_master_redhat_pkgs: []

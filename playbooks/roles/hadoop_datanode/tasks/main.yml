@@ -21,6 +21,7 @@
 #
 #
 
-- name: stub ansible task
-  debug: msg="This is a stub task created by the ansible-role role"
-  notify: notify me
+- name: install system packages
+  apt:
+    pkg={{','.join(hadoop_datanode_debian_pkgs)}}
+    state=present update_cache=yes

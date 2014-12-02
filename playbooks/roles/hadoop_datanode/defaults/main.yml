@@ -20,6 +20,7 @@ hadoop_datanode_role_name: hadoop_datanode
 # OS packages
 #
 
-hadoop_datanode_debian_pkgs: []
+hadoop_datanode_debian_pkgs:
+  - openjdk-7-jdk
 
 hadoop_datanode_redhat_pkgs: []
