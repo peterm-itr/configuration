@@ -1,0 +1,3 @@
+analyticssingle:
+  build: docker/analytics/single/
+  command: /bin/bash
