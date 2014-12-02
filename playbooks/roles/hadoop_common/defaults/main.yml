@@ -16,9 +16,14 @@
 #
 
 HADOOP_COMMON_VERSION: 2.3.0
+HADOOP_COMMON_HOME: /home/hadoop
 
+hadoop_user: hadoop
+hadoop_group: hadoop
 hadoop_common_role_name: hadoop_common
-hadoop_common_dist_url: "https://archive.apache.org/dist/hadoop/core/hadoop-{{ HADOOP_COMMON_VERSION }}/hadoop-{{ HADOOP_COMMON_VERSION }}.tar.gz"
+hadoop_dist:
+  url: "https://archive.apache.org/dist/hadoop/core/hadoop-{{ HADOOP_COMMON_VERSION }}/hadoop-{{ HADOOP_COMMON_VERSION }}.tar.gz"
+  sha256sum: 3FAD58B525A47CF74458D0996564A2151C5A28BAA1F92383E7932774DEEF5023
 
 #
 # OS packages

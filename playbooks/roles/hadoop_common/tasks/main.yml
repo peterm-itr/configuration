@@ -21,10 +21,36 @@
 #
 #
 
-- name: install system packages
-  apt:
-    pkg={{','.join(hadoop_common_debian_pkgs)}}
-    state=present update_cache=yes
+# - name: install system packages
+#   apt: >
+#     pkg={{ ','.join(hadoop_common_debian_pkgs) }}
+#     state=present
 
-- name: download hadoop distribution
-  get_url: url={{ hadoop_common_dist_url }} dest=/tmp
+# - name: download hadoop distribution
+#   get_url: >
+#     url={{ hadoop_dist.url }}
+#     sha256sum={{ hadoop_dist.sha256sum }}
+#     dest=/tmp
+#     validate_certs=no
+
+- name: ensure hadoop group exists
+  group: name={{ hadoop_group }} system=yes state=present
+
+- name: ensure hadoop user exists
+  user: >
+    name={{ hadoop_user }}
+    group={{ hadoop_group }}
+    home={{ HADOOP_COMMON_HOME }} createhome=yes
+    shell=/bin/bash system=yes
+    state=present
+
+- name: install the boostrap script
+  template: >
+    src=boostrap.sh.j2
+    dest={{ HADOOP_COMMON_HOME }}/bootstrap.sh
+    mode=0700 owner={{ hadoop_user }} group={{ hadoop_group }}
+
+# - name: extract distribution
+#   shell: >
+#     chdir={{ HADOOP_COMMON_HOME }}
+#     tar -xzf /tmp/hadoop-{{ HADOOP_COMMON_VERSION }}.tar.gz
