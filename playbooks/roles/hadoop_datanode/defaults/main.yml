@@ -7,20 +7,19 @@
 # code style: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
 # license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
 #
-#
-#
-# Tasks for role hadoop_task
+##
+# Defaults for role hadoop_datanode
 # 
-# Overview:
-# 
+
 #
-# Dependencies:
+# vars are namespace with the module name.
 #
-# 
-# Example play:
+hadoop_datanode_role_name: hadoop_datanode
+
 #
+# OS packages
 #
 
-- name: stub ansible task
-  debug: msg="This is a stub task created by the ansible-role role"
-  notify: notify me
+hadoop_datanode_debian_pkgs: []
+
+hadoop_datanode_redhat_pkgs: []

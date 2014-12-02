@@ -4,3 +4,5 @@
   gather_facts: True
   roles:
     - hadoop_master
+    - hadoop_tasktracker
+    - hadoop_datanode

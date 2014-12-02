@@ -8,18 +8,18 @@
 # license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
 #
 ##
-# Defaults for role hadoop_task
+# Defaults for role hadoop_tasktracker
 # 
 
 #
 # vars are namespace with the module name.
 #
-hadoop_task_role_name: hadoop_task
+hadoop_tasktracker_role_name: hadoop_tasktracker
 
 #
 # OS packages
 #
 
-hadoop_task_debian_pkgs: []
+hadoop_tasktracker_debian_pkgs: []
 
-hadoop_task_redhat_pkgs: []
+hadoop_tasktracker_redhat_pkgs: []
