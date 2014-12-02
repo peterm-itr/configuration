@@ -3,6 +3,4 @@
   sudo: True
   gather_facts: True
   roles:
-    - hadoop_master
-    - hadoop_tasktracker
-    - hadoop_datanode
+    - hadoop_common

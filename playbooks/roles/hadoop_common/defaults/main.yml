@@ -8,19 +8,23 @@
 # license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
 #
 ##
-# Defaults for role hadoop_master
+# Defaults for role hadoop_common
 # 
 
 #
 # vars are namespace with the module name.
 #
-hadoop_master_role_name: hadoop_master
+
+HADOOP_COMMON_VERSION: 2.3.0
+
+hadoop_common_role_name: hadoop_common
+hadoop_common_dist_url: "https://archive.apache.org/dist/hadoop/core/hadoop-{{ HADOOP_COMMON_VERSION }}/hadoop-{{ HADOOP_COMMON_VERSION }}.tar.gz"
 
 #
 # OS packages
 #
 
-hadoop_master_debian_pkgs:
+hadoop_common_debian_pkgs:
   - openjdk-7-jdk
 
-hadoop_master_redhat_pkgs: []
+hadoop_common_redhat_pkgs: []

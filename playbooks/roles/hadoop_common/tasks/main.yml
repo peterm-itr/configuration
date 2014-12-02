@@ -7,19 +7,24 @@
 # code style: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
 # license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
 #
-##
-# Defaults for role hadoop_tasktracker
+#
+#
+# Tasks for role hadoop_tasktracker
 # 
-
+# Overview:
+# 
 #
-# vars are namespace with the module name.
+# Dependencies:
 #
-hadoop_tasktracker_role_name: hadoop_tasktracker
-
+# 
+# Example play:
 #
-# OS packages
 #
 
-hadoop_tasktracker_debian_pkgs: []
+- name: install system packages
+  apt:
+    pkg={{','.join(hadoop_common_debian_pkgs)}}
+    state=present update_cache=yes
 
-hadoop_tasktracker_redhat_pkgs: []
+- name: download hadoop distribution
+  get_url: url={{ hadoop_common_dist_url }} dest=/tmp
