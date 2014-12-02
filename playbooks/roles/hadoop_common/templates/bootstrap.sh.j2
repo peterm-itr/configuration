@@ -1,7 +1,6 @@
 #!/bin/bash
 
-whoami
-service ssh start
+sudo service ssh start
 
 ansible-playbook -c local create_user.yml -e "user=$GITHUB_USERNAME" -e "give_sudo=true"
 
