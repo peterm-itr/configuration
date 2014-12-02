@@ -1,0 +1,25 @@
+---
+#
+# edX Configuration
+#
+# github:     https://github.com/edx/configuration
+# wiki:       https://github.com/edx/configuration/wiki
+# code style: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
+# license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
+#
+##
+# Defaults for role hadoop_task
+# 
+
+#
+# vars are namespace with the module name.
+#
+hadoop_task_role_name: hadoop_task
+
+#
+# OS packages
+#
+
+hadoop_task_debian_pkgs: []
+
+hadoop_task_redhat_pkgs: []

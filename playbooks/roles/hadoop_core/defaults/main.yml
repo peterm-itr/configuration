@@ -1,0 +1,25 @@
+---
+#
+# edX Configuration
+#
+# github:     https://github.com/edx/configuration
+# wiki:       https://github.com/edx/configuration/wiki
+# code style: https://github.com/edx/configuration/wiki/Ansible-Coding-Conventions
+# license:    https://github.com/edx/configuration/blob/master/LICENSE.TXT
+#
+##
+# Defaults for role hadoop_core
+# 
+
+#
+# vars are namespace with the module name.
+#
+hadoop_core_role_name: hadoop_core
+
+#
+# OS packages
+#
+
+hadoop_core_debian_pkgs: []
+
+hadoop_core_redhat_pkgs: []
