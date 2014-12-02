@@ -46,7 +46,7 @@
 
 - name: install the boostrap script
   template: >
-    src=boostrap.sh.j2
+    src=bootstrap.sh.j2
     dest={{ HADOOP_COMMON_HOME }}/bootstrap.sh
     mode=0700 owner={{ hadoop_user }} group={{ hadoop_group }}
 
