@@ -1,8 +1,9 @@
 #!/bin/bash
 
-ansible-playbook -c local create_user.yml -e "user=$GITHUB_USERNAME" -e "give_sudo=true"
+whoami
+service ssh start
 
-service sshd start
+ansible-playbook -c local create_user.yml -e "user=$GITHUB_USERNAME" -e "give_sudo=true"
 
 echo "Pres CTRL+C to stop..."
 for (( ; ; ))

@@ -1,3 +1,4 @@
 analyticssingle:
   build: docker/analytics/single/
-  command: /bin/bash
+  ports:
+    - "22:7000"
