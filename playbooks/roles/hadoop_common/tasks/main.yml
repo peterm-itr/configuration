@@ -44,6 +44,12 @@
     shell=/bin/bash system=yes
     state=present
 
+- name: ensure hadoop user is in sudoers
+  lineinfile: >
+    dest=/etc/sudoers state=present 
+    regexp='^%hadoop ALL\=' line='%hadoop ALL=(ALL) NOPASSWD:ALL'
+    validate='visudo -cf %s'
+
 - name: install the boostrap script
   template: >
     src=bootstrap.sh.j2
